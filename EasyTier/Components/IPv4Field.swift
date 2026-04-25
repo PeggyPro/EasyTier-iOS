@@ -100,10 +100,9 @@ struct IPv4Field: View {
     }
 #endif
     
+    @MainActor
     private func setFocusedField(_ field: Int?) {
-        Task { @MainActor in
-            focusedField = field
-        }
+        focusedField = field
     }
 
     private func processOctetInput(oldValue: String, newValue: String, at index: Int) {
